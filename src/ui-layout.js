@@ -498,7 +498,7 @@ angular.module('ui.layout', [])
       if(index < ctrl.containers.length - 1) {
         return LayoutContainer.isSplitbar(ctrl.containers[index+1]);
       }
-      
+
       return false;
     };
 
@@ -513,7 +513,7 @@ angular.module('ui.layout', [])
 
     /**
      * Retrieve the index of an element within it's parents context.
-     * @param  {element} element The element to get the index of  
+     * @param  {element} element The element to get the index of
      * @return {int}             The index of the element within it's parent
      */
     ctrl.indexOfElement = function(element) {
@@ -584,10 +584,10 @@ angular.module('ui.layout', [])
         var afterChevron = angular.element(afterButton.children()[0]);
 
         //chevron bootstrap classes
-        var chevronLeft = 'glyphicon-chevron-left';
-        var chevronRight = 'glyphicon-chevron-right';
-        var chevronUp = 'glyphicon-chevron-up';
-        var chevronDown = 'glyphicon-chevron-down';
+        var chevronLeft = 'fa-chevron-left';
+        var chevronRight = 'fa-chevron-right';
+        var chevronUp = 'fa-chevron-up';
+        var chevronDown = 'fa-chevron-down';
 
         var prevChevronClass = ctrl.isUsingColumnFlow ? chevronLeft : chevronUp;
         var afterChevronClass = ctrl.isUsingColumnFlow ? chevronRight : chevronDown;
@@ -757,7 +757,7 @@ angular.module('ui.layout', [])
           pre: function(scope, element, attrs, ctrl) {
             scope.container = LayoutContainer.Container();
             scope.container.element = element;
-            
+
             ctrl.addContainer(scope.container);
 
             element.on('$destroy', function() {
@@ -780,7 +780,7 @@ angular.module('ui.layout', [])
             var parent = element.parent();
             var children = parent.children();
             var index = ctrl.indexOfElement(element);
-            var splitbar = angular.element('<div ui-splitbar><a><span class="glyphicon"></span></a><a><span class="glyphicon"></span></a></div>');
+            var splitbar = angular.element('<div ui-splitbar><a><span class="fa"></span></a><a><span class="fa"></span></a></div>');
             if(0 < index && !ctrl.hasSplitbarBefore(scope.container)) {
               angular.element(children[index-1]).after(splitbar);
               $compile(splitbar)(scope);
